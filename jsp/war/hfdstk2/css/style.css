@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+html, body {
+
+	clear:both;
+	height:100%;
+	margin:0;
+}
+*, select{
+	cursor:url(../images/cursor.cur), auto;
+}
+
+.test {
+	
+	cursor:url(../images/cursor.cur), auto !important;
+	
+}
+
+div.box {
+	display:inline-block;
+	width: 100%;
+	max-width: 300px;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	background: -webkit-linear-gradient(right, rgba(127,127,127,0), rgba(127,127,127,1));
+	background: -o-linear-gradient(left, rgba(127,127,127,0), rgba(127,127,127,1)); 
+	background: -moz-linear-gradient(left, rgba(127,127,127,0), rgba(127,127,127,1));
+	background: linear-gradient(to left, rgba(127,127,127,0), rgba(127,127,127,1)); 
+}
+
+div.box .box_naam {
+	width: 100%;
+	background-color: blue;
+	color: yellow;
+	line-height: 2em;
+	background-color: #800000;
+	color: #FFF8DC;
+	font-weight: bold;
+}
+
+.wrapper {
+	
+	margin: 0px 10%;
+	
+}
