@@ -11,14 +11,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Opdracht 9 JSP</title>
-		<link rel="stylesheet" id="themeCSS" href="../css/iThing.css"> 
-		<link rel="stylesheet" href="style.css">
-		
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
-		<script src="../lib/jquery.mousewheel.min.js"></script>
-		<script src="../jQAllRangeSliders-min.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet"> 
 	</head>
@@ -30,7 +25,11 @@
 		<!-- INPUT -->
 		<div class="wrapper">
 		<form action="opdr9.jsp" method="get">
-      
+		<div data-role="rangeslider">
+        <label for="price-min">Prijs:</label>
+        <input type="range" name="price-min" id="price-min" value="0" min="0" max="360000">
+        <input type="range" name="price-max" id="price-max" value="360000" min="0" max="360000">
+      </div>
       <table width="100%">
       <tr>
       
