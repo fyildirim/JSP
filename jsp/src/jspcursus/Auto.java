@@ -36,7 +36,7 @@ public class Auto {
    
    
     public String getPrijsFormat() {
-        DecimalFormat df = new DecimalFormat("#,##0.-");
+        DecimalFormat df = new DecimalFormat("€#,##0.-");
         double prijs = (double) this.getPrijs();
         String sPrijs = df.format(prijs);
         return sPrijs;

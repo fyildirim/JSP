@@ -30,7 +30,7 @@ public class AutoLijst {
           "images/autos/subaruimpreza.jpg");
         autolijst.add(subaru2);
         Auto mercedes1 = new Auto("Mercedes", "E 63", 110995, 
-          "images/autos/mercedede63.png");
+          "images/autos/mercedede63.jpg");
         autolijst.add(mercedes1);
         Auto mercedes2 = new Auto("Mercedes", "CLA 45", 190780, 
           "images/autos/mercedescla45.jpg");
