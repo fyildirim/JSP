@@ -4,6 +4,9 @@ html {
 	font-family: 'Roboto', sans-serif;
 }
 
+#navbar { display:inline-block; text-align:center; background-color:#ff33ff; height:70px; transition:1s ease fade;}
+#navbar li {padding:10px 30px; background-color:white; transition:1s ease fade;}
+
 div.box {
 	display: inline-block;
 	width: 100%;
