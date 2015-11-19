@@ -13,9 +13,6 @@
 			long b = 1L;
 			long c = 1L;
 			long maxWaarde = 900000000000000000L;
-		%>
-		
-		<%
 			for(int i = 0; i < 100; i++) {
 				out.println(c + ", ");
 				c = a + b;
