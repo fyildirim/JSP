@@ -1,54 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@page import="java.util.*"%>
-<%@page import="java.lang.*"%>
-<%@page import="java.awt.*"%>
-<%@page import="jspcursus.Auto"%>
-<%@page import="jspcursus.AutoLijst"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="java.util.*"%><%@page import="java.lang.*"%><%@page import="java.awt.*"%><%@page import="jspcursus.Auto"%><%@page import="jspcursus.AutoLijst"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto'
-		rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet"
-		href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<link rel="stylesheet" href="/resources/demos/style.css">
 	<script>
-		var merk = $('select[name=autolijst]').val();
-		$('#testtekst').html("hoi " + merk);
-		
 		$(function() {
 			$("#slider-range").slider({
 				range : true,
 				min : 0,
-				max : 500,
-				values : [ 75, 300 ],
+				max : 209000,
+				values : [ 0, 209000 ],
 				slide : function(event, ui) {
-					$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+					$("#amount").val("" + ui.values[0] + " - " + ui.values[1]);
+					$("#minprijs").val("" + ui.values[0]);
+					$("#maxprijs").val("" + ui.values[1]);
 				}
 			});
 			$("#amount").val(
-					"$" + $("#slider-range").slider("values", 0) + " - $"
+					"" + $("#slider-range").slider("values", 0) + " - "
 							+ $("#slider-range").slider("values", 1));
 		});
 	</script>
-	<title>AutoWebshop</title>
-	
+	<title>Ferhat's JSP Toets</title>
 	</head>
-	
 	<body>
-		<%
-			int invoermin;
-			int invoermax;
-		%>
-		<form action="AutoWebshop.jsp" method="get">
-			Minimum prijs <input type="text" name="minprijs"> Maximum
-			prijs <input type="text" name="maxprijs"> Kies merk <select
+		<%	int invoermin;
+			int invoermax; %>
+		<form action="jsptoets.jsp" method="get">
+			<div id="slider-range"></div>
+			<input type="hidden" name="minprijs" id="minprijs"> 
+			<input type="hidden" name="maxprijs" id="maxprijs">
+			Kies merk <select
 				name="autolijst">
 				<option value="alle">Alle merken</option>
 				<option value="Ford">Ford</option>
@@ -66,8 +55,7 @@
 			<label for="amount">Price range:</label>
 			<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
 		</p>
-		<p id="testtekst"></p>
-		<div id="slider-range"></div>
+		<div id="#wrapper">
 <%			AutoLijst autos = new AutoLijst();
 			ArrayList<Auto> autolijst = autos.getLijst();
 	
@@ -94,7 +82,7 @@
 				} else {
 					invoermax = Integer.parseInt(request.getParameter("maxprijs"));
 				}
-	
+				
 				for (Auto i : autos.getMerkenMinMax(request.getParameter("autolijst"), invoermin, invoermax)) {
 		%>
 		<div class="box">
@@ -107,13 +95,9 @@
 		</div>
 		<%
 			}
-	
 			}
 		%>
+	</div>
 	
-	
-	
-		 
 	</body>
-
 </html>

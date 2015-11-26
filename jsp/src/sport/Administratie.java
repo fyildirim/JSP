@@ -8,6 +8,7 @@ import com.google.appengine.api.datastore.EntityNotFoundException;
 
 import sportIO.SportIO;
 
+@SuppressWarnings("serial")
 public class Administratie implements Serializable {
 	private SportIO io;
 	private ArrayList<Lid> leden;

@@ -2,6 +2,7 @@ package sport;
 
 import java.io.Serializable;
 
+@SuppressWarnings("serial")
 public class Team implements Serializable {
 	private String teamcode;
 	private String omschrijving;
